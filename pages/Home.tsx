@@ -60,24 +60,12 @@ const Home = () => {
 
   const updates = [
     {
-      title: "🚀 BanavatNest 2.0 is now live! Explore our new research ecosystem.",
-      route: "/about",
-    },
-    {
-      title: "🏆 Upcoming Hackathon: 'Innovate against Climate Change' - Register by March 15th.",
+      title: "🏆 Upcoming Hackathon ",
       route: "/news/hackathon-climate-change",
     },
     {
-      title: "📄 Nesearew Rch Paper Published: 'AI in Sustainable Agriculture' by Dr. Sharma.",
-      route: "/research/ai-agriculture",
-    },
-    {
-      title: "🤝 Partnership Announcement: Collaborating with TechGiant Industries for IoT solutions.",
+      title: "🤝 Partnership Announcement:",
       route: "/partnerships/techgiant",
-    },
-    {
-      title: "🎓 Student Internship Program Applications are now open for Summer 2026.",
-      route: "/careers/internships",
     },
   ];
 
