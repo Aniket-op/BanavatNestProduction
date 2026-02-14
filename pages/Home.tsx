@@ -79,7 +79,7 @@ const Home = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden grid-bg pt-12 pb-24 md:pt-12 md:pb-40 dark:bg-[#09090b]">
+      <section className="relative overflow-hidden grid-bg pt-12 pb-24 md:pt-12 md:pb-10 dark:bg-[#09090b]">
         <div className="hidden dark:block">
           <motion.div
             animate={{ scale: [1, 1.05, 1], opacity: [0.08, 0.12, 0.08] }}

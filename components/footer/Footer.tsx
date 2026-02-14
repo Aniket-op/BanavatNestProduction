@@ -3,14 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const Logo = () => (
-    <div className="flex font-extrabold text-2xl tracking-tighter items-center group cursor-pointer">
-        <div className="flex items-baseline">
-            <span className="text-[#84CC16]">Banavat</span>
-            <span className="text-[#5D3A1A] dark:text-zinc-100 transition-colors">Nest</span>
-        </div>
-    </div>
-);
+import Logo from '../Logo';
 
 const Footer = () => {
     const socialLinks = [
