@@ -150,3 +150,4 @@ const FocusAreaCard: React.FC<FocusAreaCardProps> = ({ area, index }) => {
         </motion.div>
     );
 };
+export default FocusAreas;

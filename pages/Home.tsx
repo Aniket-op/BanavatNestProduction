@@ -59,13 +59,13 @@ const Home = () => {
   ];
 
   const updates = [
+    // {
+    //   title: "🏆 Upcoming Hackathon ",
+    //   route: "/news/hackathon-climate-change",
+    // },
     {
-      title: "🏆 Upcoming Hackathon ",
-      route: "/news/hackathon-climate-change",
-    },
-    {
-      title: "🤝 Partnership Announcement:",
-      route: "/partnerships/techgiant",
+      title: "BanavatNest Official Website Goes Live",
+      route: "/",
     },
   ];
 
@@ -158,8 +158,14 @@ const Home = () => {
         </div>
       </section>
 
+
+
+
       {/* Partners & Feedback Section */}
-      <PartnersFeedback />
+      {/* <PartnersFeedback /> */}
+
+
+
 
 
       {/* Mission & Vision Section - Fixed for Light Mode */}
