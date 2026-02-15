@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { motion } from 'framer-motion';
 import { Send, Building2, Globe, Cpu, Users } from 'lucide-react';
 
@@ -95,4 +95,4 @@ const PartnersFeedback = () => {
     );
 };
 
-export default PartnersFeedback;
+export default PartnersFeedback;*/
