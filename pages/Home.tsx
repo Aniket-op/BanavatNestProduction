@@ -14,10 +14,10 @@ import FluidCursor from "../components/FluidCursor";
 import DomainCarousel from "../components/DomainCarousel";
 import InfiniteUpdateBar from "../components/InfiniteUpdateBar";
 import PartnersFeedback from "../components/PartnersFeedback";
-import image_agriculture from "../assets/homepage/agriculture.png";
-import image_ai from "../assets/homepage/Ai.png";
-import image_cyber from "../assets/homepage/cyberSecure.png";
-import image_smart from "../assets/homepage/smart.png";
+import image_agriculture from "../assets/homepage/agriculture.jpg";
+import image_ai from "../assets/homepage/Ai.jpg";
+import image_cyber from "../assets/homepage/cyberSecure.jpg";
+import image_smart from "../assets/homepage/smart.jpg";
 
 const Home = () => {
   const { scrollY } = useScroll();

@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 import ImageCarousel from '../../components/ImageCarousel';
 
-import img1 from '../../assets/homepage/Ai.png';
-import img2 from '../../assets/homepage/agriculture.png';
-import img3 from '../../assets/homepage/cyberSecure.png';
-import img4 from '../../assets/homepage/smart.png';
+import img1 from '../../assets/homepage/images/image1.jpg';
+import img2 from '../../assets/homepage/images/image2.jpg';
+import img3 from '../../assets/homepage/images/image3.jpg';
+import img4 from '../../assets/homepage/images/image4.jpg';
 
 const images = [img1, img2, img3, img4];
 

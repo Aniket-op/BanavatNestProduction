@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { BrainCircuit, GlobeLock, Cpu, Tractor } from 'lucide-react';
 import ImageCarousel from '../../components/ImageCarousel';
 
-import img1 from '../../assets/homepage/Ai.png';
-import img2 from '../../assets/homepage/agriculture.png';
-import img3 from '../../assets/homepage/cyberSecure.png';
-import img4 from '../../assets/homepage/smart.png';
+import img1 from '../../assets/homepage/Ai.jpg';
+import img2 from '../../assets/homepage/agriculture.jpg';
+import img3 from '../../assets/homepage/cyberSecure.jpg';
+import img4 from '../../assets/homepage/smart.jpg';
 
 interface DomainCardProps {
     domain: {
@@ -30,7 +30,7 @@ const Domains = () => {
             color: 'bg-[#84CC16]',
             accent: 'text-[#84CC16]',
             border: 'hover:border-[#84CC16]/50',
-            images: [img1, img3]
+            images: [img1]
         },
         {
             title: 'Cybersecurity & IoT',
@@ -39,7 +39,7 @@ const Domains = () => {
             color: 'bg-green-500',
             accent: 'text-green-500',
             border: 'hover:border-green-500/50',
-            images: [img3, img4]
+            images: [img3]
         },
         {
             title: 'Smart Systems & Health',
@@ -48,7 +48,7 @@ const Domains = () => {
             color: 'bg-teal-500',
             accent: 'text-teal-500',
             border: 'hover:border-teal-500/50',
-            images: [img4, img1]
+            images: [img4]
         },
         {
             title: 'Precision Agriculture',
@@ -57,7 +57,7 @@ const Domains = () => {
             color: 'bg-lime-500',
             accent: 'text-lime-500',
             border: 'hover:border-lime-500/50',
-            images: [img2, img1]
+            images: [img2]
         }
     ];
 

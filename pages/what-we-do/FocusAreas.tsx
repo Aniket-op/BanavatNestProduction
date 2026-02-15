@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Microscope, Code2, Users2, Zap } from 'lucide-react';
 import ImageCarousel from '../../components/ImageCarousel';
 
-import img1 from '../../assets/homepage/Ai.png';
-import img2 from '../../assets/homepage/agriculture.png';
-import img3 from '../../assets/homepage/cyberSecure.png';
-import img4 from '../../assets/homepage/smart.png';
+import img1 from '../../assets/homepage/Ai.jpg';
+import img2 from '../../assets/homepage/agriculture.jpg';
+import img3 from '../../assets/homepage/cyberSecure.jpg';
+import img4 from '../../assets/homepage/smart.jpg';
 
 export interface FocusAreaItem {
     title: string;
@@ -26,7 +26,7 @@ const FOCUS_AREAS: FocusAreaItem[] = [
         color: 'bg-blue-500',
         accent: 'text-blue-500',
         border: 'hover:border-blue-500/50',
-        images: [img1, img2]
+        images: [img1]
     },
     {
         title: 'Product Prototyping',
@@ -35,7 +35,7 @@ const FOCUS_AREAS: FocusAreaItem[] = [
         color: 'bg-[#84CC16]',
         accent: 'text-[#84CC16]',
         border: 'hover:border-[#84CC16]/50',
-        images: [img2, img3]
+        images: [img2]
     },
     {
         title: 'Academia Collaboration',
@@ -44,7 +44,7 @@ const FOCUS_AREAS: FocusAreaItem[] = [
         color: 'bg-purple-500',
         accent: 'text-purple-500',
         border: 'hover:border-purple-500/50',
-        images: [img3, img4]
+        images: [img3]
     },
     {
         title: 'Tech Transfer',
@@ -53,7 +53,7 @@ const FOCUS_AREAS: FocusAreaItem[] = [
         color: 'bg-amber-500',
         accent: 'text-amber-500',
         border: 'hover:border-amber-500/50',
-        images: [img4, img1]
+        images: [img4]
     }
 ];
 

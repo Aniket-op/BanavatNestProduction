@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ImageCarousel from '../../components/ImageCarousel';
 
-import img1 from '../../assets/homepage/Ai.png';
-import img2 from '../../assets/homepage/agriculture.png';
-import img3 from '../../assets/homepage/cyberSecure.png';
-import img4 from '../../assets/homepage/smart.png';
+import img1 from '../../assets/ournames/1.png';
+import img2 from '../../assets/ournames/2.png';
+import img3 from '../../assets/ournames/3.png';
+import img4 from '../../assets/ournames/4.png';
 
 const images = [img1, img2, img3, img4];
 
