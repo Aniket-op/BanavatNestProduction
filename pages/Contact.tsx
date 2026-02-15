@@ -8,7 +8,7 @@ const Contact = () => {
          <header className="bg-white dark:bg-zinc-900/20 pt-32 pb-20 border-b border-gray-100 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                <h1 className="text-6xl md:text-8xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter">
-                  Contact <span className="text-[#84CC16]">Us.</span>
+                  Contact <span className="text-[#84CC16]">Us</span>
                </h1>
                <p className="text-xl text-gray-500 dark:text-zinc-400 max-w-2xl font-medium">
                   Reach out to explore collaboration, internship opportunities, or general R&D inquiries.
@@ -46,17 +46,17 @@ const Contact = () => {
                                  <p className="text-lg font-bold text-zinc-900 dark:text-zinc-100">+91 99340 44777</p>
                               </div>
                            </div>
-                           <div className="flex items-start gap-6 group">
+                           {/* <div className="flex items-start gap-6 group">
                               <div className="shrink-0 p-4 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-2xl group-hover:scale-110 transition-transform">
                                  <MapPin />
                               </div>
                               <div>
                                  <p className="text-[10px] font-black text-gray-400 dark:text-zinc-400 uppercase tracking-[0.2em] mb-1">Location</p>
-                                 {/* <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
+                                 <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
                                     Sutahata, East Midnapore,<br />West Bengal, India – 721645
-                                 </p> */}
+                                 </p>
                               </div>
-                           </div>
+                           </div> */}
                         </div>
                      </motion.div>
                   </div>
