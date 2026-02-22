@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --color-lime-400: #84CC16;
   --color-lime-500: #65A30D;
