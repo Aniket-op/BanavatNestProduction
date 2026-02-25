@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Phone, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Logo from '../Logo';
 
@@ -9,6 +9,7 @@ const Footer = () => {
     const socialLinks = [
         { Icon: Linkedin, href: "https://www.linkedin.com/company/banavatnest-pvt-ltd/", label: "LinkedIn" },
         { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61587883936129", label: "Facebook" },
+        { Icon: Instagram, href: "https://www.instagram.com/banavatnest/", label: "Instragram" },
     ];
 
     return (
