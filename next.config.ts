@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Netlify's CDN handles image optimization; disable Next.js built-in
+  images: {
+    unoptimized: true,
+  },
+  // Consistent URL handling — no trailing slashes
+  trailingSlash: false,
   async redirects() {
     return [
       {

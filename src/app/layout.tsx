@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.jpg",
-        width: 800,
-        height: 600,
-        alt: "BanavatNest Logo",
+        width: 1200,
+        height: 630,
+        alt: "BanavatNest — Research-Led Innovation Ecosystem",
       },
     ],
     locale: "en_IN",
@@ -77,6 +77,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/logo.jpg",
+    apple: "/logo.jpg",
   },
   alternates: {
     canonical: "https://banavatnest.com",
