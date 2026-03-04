@@ -1,53 +1,56 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link } from '@/i18n/navigation';
+import { usePathname } from '@/i18n/navigation';
 import { ArrowUpRight, Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const pathname = usePathname();
+    const t = useTranslations('nav');
 
     const navLinks = [
         {
-            name: 'Home',
-            path: '/',
+            name: t('home'),
+            path: '/' as const,
         },
         {
-            name: 'About Us',
-            path: '/about',
+            name: t('aboutUs'),
+            path: '/about' as const,
             subItems: [
-                { name: 'Our Name', path: '/about/name' },
-                { name: 'Philosophy & Core Values', path: '/about/philosophy' },
-                { name: 'Mission and Vision', path: '/about/mission' },
-                { name: 'Our Team', path: '/about/team' },
-                { name: 'Board of Directors', path: '/about/board' },
+                { name: t('ourName'), path: '/about/name' as const },
+                { name: t('philosophy'), path: '/about/philosophy' as const },
+                { name: t('mission'), path: '/about/mission' as const },
+                { name: t('ourTeam'), path: '/about/team' as const },
+                { name: t('board'), path: '/about/board' as const },
             ]
         },
         {
-            name: 'What We Do',
-            path: '/what-we-do',
+            name: t('whatWeDo'),
+            path: '/what-we-do' as const,
             subItems: [
-                { name: 'Focus Areas', path: '/what-we-do/focus' },
-                { name: 'Domains', path: '/what-we-do/domains' },
+                { name: t('focusAreas'), path: '/what-we-do/focus' as const },
+                { name: t('domains'), path: '/what-we-do/domains' as const },
             ]
         },
         {
-            name: 'Academia-Industry Bridge',
-            path: '/bridge',
+            name: t('bridge'),
+            path: '/bridge' as const,
             subItems: [
-                { name: 'Collaboration Model', path: '/bridge/collaboration' },
-                { name: 'Opportunities for Students', path: '/bridge/opportunities' },
-                { name: 'Faculty Engagement', path: '/bridge/faculty' },
-                { name: 'Industry Partnerships', path: '/bridge/partnerships' },
+                { name: t('collaboration'), path: '/bridge/collaboration' as const },
+                { name: t('opportunities'), path: '/bridge/opportunities' as const },
+                { name: t('faculty'), path: '/bridge/faculty' as const },
+                { name: t('partnerships'), path: '/bridge/partnerships' as const },
             ]
         },
-        { name: 'Contact', path: '/contact' },
+        { name: t('contact'), path: '/contact' as const },
     ];
 
     const handleDropdownEnter = (name: string) => {
@@ -129,21 +132,23 @@ const Navbar = () => {
                                 )}
                             </div>
                         ))}
-                        <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-gray-200 dark:border-zinc-800">
+                        <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200 dark:border-zinc-800">
+                            <LanguageSwitcher />
                             <ThemeToggle />
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                 <Link
                                     href="/contact"
                                     className="bg-[#5D3A1A] dark:bg-zinc-100 text-white dark:text-zinc-900 px-7 py-2.5 rounded-full text-sm font-bold flex items-center hover:bg-[#4B2C13] dark:hover:bg-zinc-200 transition-all shadow-lg hover:shadow-[#84CC16]/20"
                                 >
-                                    Get Involved <ArrowUpRight className="ml-2 w-4 h-4" />
+                                    {t('contact')} <ArrowUpRight className="ml-2 w-4 h-4" />
                                 </Link>
                             </motion.div>
                         </div>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center space-x-4">
+                    <div className="md:hidden flex items-center space-x-3">
+                        <LanguageSwitcher />
                         <ThemeToggle />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
@@ -200,7 +205,7 @@ const Navbar = () => {
                             onClick={() => setIsOpen(false)}
                             className="block w-full text-center bg-[#5D3A1A] dark:bg-zinc-100 text-white dark:text-zinc-900 px-6 py-4 rounded-xl font-bold shadow-lg mt-4"
                         >
-                            Get Involved
+                            {t('contact')}
                         </Link>
                     </motion.div>
                 )}

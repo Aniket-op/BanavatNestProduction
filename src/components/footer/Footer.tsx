@@ -1,15 +1,20 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Mail, Phone, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Logo from '../Logo';
 
 const Footer = () => {
+    const t = useTranslations('footer');
+    const tNav = useTranslations('nav');
+    const tCommon = useTranslations('common');
+
     const socialLinks = [
         { Icon: Linkedin, href: "https://www.linkedin.com/company/banavatnest-pvt-ltd/", label: "LinkedIn" },
         { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61587883936129", label: "Facebook" },
-        { Icon: Instagram, href: "https://www.instagram.com/banavatnest/", label: "Instragram" },
+        { Icon: Instagram, href: "https://www.instagram.com/banavatnest/", label: "Instagram" },
     ];
 
     return (
@@ -21,8 +26,8 @@ const Footer = () => {
                             <Logo />
                         </Link>
                         <div className="text-gray-500 dark:text-zinc-400 text-sm leading-relaxed font-medium space-y-2">
-                            <p>BanavatNest Private Limited</p>
-                            <p>CIN: U72100WB2025PTC280919</p>
+                            <p>{t('companyName')}</p>
+                            <p>{t('cin')}</p>
                         </div>
                         <div className="mt-8 flex space-x-3">
                             {socialLinks.map(({ Icon, href }, i) => (
@@ -36,25 +41,25 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">Platform</h4>
+                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">{t('platform')}</h4>
                         <ul className="space-y-4 text-sm text-gray-500 dark:text-zinc-400 font-bold">
-                            <li><Link href="/what-we-do/focus" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />Focus Areas</Link></li>
-                            <li><Link href="/what-we-do/domains" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />Research Domains</Link></li>
-                            <li><Link href="/bridge/collaboration" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />Collaboration</Link></li>
+                            <li><Link href="/what-we-do/focus" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />{tNav('focusAreas')}</Link></li>
+                            <li><Link href="/what-we-do/domains" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />{t('researchDomains')}</Link></li>
+                            <li><Link href="/bridge/collaboration" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-lime-400 mr-2" />{tNav('collaboration')}</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">Company</h4>
+                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">{t('company')}</h4>
                         <ul className="space-y-4 text-sm text-gray-500 dark:text-zinc-400 font-bold">
-                            <li><Link href="/about/name" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />About Us</Link></li>
-                            <li><Link href="/privacy" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />Privacy Policy</Link></li>
-                            <li><Link href="/terms" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />Terms of Use</Link></li>
+                            <li><Link href="/about/name" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />{t('aboutUs')}</Link></li>
+                            <li><Link href="/privacy" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />{t('privacyPolicy')}</Link></li>
+                            <li><Link href="/terms" className="hover:text-[#84CC16] transition-colors flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A] dark:bg-zinc-100 mr-2" />{t('termsOfUse')}</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">Contact </h4>
+                        <h4 className="text-zinc-900 dark:text-zinc-100 font-bold mb-8 text-lg">{tNav('contact')} </h4>
                         <ul className="space-y-4 text-sm text-gray-500 dark:text-zinc-400 font-bold">
                             <li className="flex items-start"><Mail className="w-5 h-5 mr-3 text-[#84CC16] shrink-0" /> <a
                                 href="https://mail.google.com/mail/?view=cm&fs=1&to=info@banavatnest.com&su=Inquiry from Website&body=Hi BanavatNest Team,"
@@ -70,7 +75,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-gray-100 dark:border-zinc-900 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 dark:text-zinc-500 font-medium">
-                    <p>© {new Date().getFullYear() + " "}BanavatNest Private Limited. All rights reserved.</p>
+                    <p>{tCommon('copyright', { year: new Date().getFullYear() })}</p>
                 </div>
             </div>
         </footer>

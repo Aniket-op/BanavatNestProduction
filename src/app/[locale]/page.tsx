@@ -1,8 +1,9 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight, Brain, Shield, Zap, Microscope } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import DomainCarousel from '@/components/DomainCarousel';
 import InfiniteUpdateBar from '@/components/InfiniteUpdateBar';
 import FluidCursor from '@/components/FluidCursor';
@@ -10,36 +11,37 @@ import FluidCursor from '@/components/FluidCursor';
 const Home = () => {
   const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, [0, 500], [0, 30]);
+  const t = useTranslations('home');
 
   const domains = [
     {
-      title: 'AI & ML',
+      title: t('domainAiTitle'),
       url: '/images/homepage/Ai.jpg',
-      desc: 'Artificial Intelligence, Machine Learning & Data Science',
+      desc: t('domainAiDesc'),
       icon: <Brain className="w-7 h-7" />,
       accent: 'from-[#84CC16] to-cyan-500',
       iconGradient: 'from-blue-500 to-cyan-400',
     },
     {
-      title: 'Cybersecurity',
+      title: t('domainCyberTitle'),
       url: '/images/homepage/cyberSecure.jpg',
-      desc: 'Cybersecurity, Internet of Things & Blockchain',
+      desc: t('domainCyberDesc'),
       icon: <Shield className="w-7 h-7" />,
       accent: 'from-emerald-500 to-[#84CC16]',
       iconGradient: 'from-green-500 to-emerald-400',
     },
     {
-      title: 'Smart Systems',
+      title: t('domainSmartTitle'),
       url: '/images/homepage/smart.jpg',
-      desc: 'Healthcare & Sustainability focus areas',
+      desc: t('domainSmartDesc'),
       icon: <Microscope className="w-7 h-7" />,
       accent: 'from-purple-500 to-pink-500',
       iconGradient: 'from-purple-500 to-pink-400',
     },
     {
-      title: 'Agriculture',
+      title: t('domainAgriTitle'),
       url: '/images/homepage/agriculture.jpg',
-      desc: 'Smart Farming and Precision Agriculture',
+      desc: t('domainAgriDesc'),
       icon: <Zap className="w-7 h-7" />,
       accent: 'from-amber-500 to-[#84CC16]',
       iconGradient: 'from-lime-500 to-yellow-600',
@@ -48,7 +50,7 @@ const Home = () => {
 
   const updates = [
     {
-      title: "BanavatNest Official Website Goes Live",
+      title: t('updateTitle'),
       route: "/",
     },
   ];
@@ -80,7 +82,7 @@ const Home = () => {
           >
             <span className="flex h-2 w-2 rounded-full bg-[#84CC16] animate-pulse"></span>
             <span className="text-[10px] font-black text-[#65A30D] dark:text-[#84CC16] uppercase tracking-[0.2em]">
-              Research-Led Innovation Ecosystem
+              {t('badge')}
             </span>
           </motion.div>
 
@@ -91,13 +93,13 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-5xl md:text-7xl lg:text-[80px] font-black text-zinc-900 dark:text-zinc-100 tracking-tighter leading-[0.9] mb-12"
               >
-                Build with <br />
+                {t('heroTitle1')} <br />
                 <span className="text-zinc-500 dark:text-zinc-500">
-                  Purpose
+                  {t('heroTitle2')}
                 </span>{" "}
                 <br />
-                Nurture to <br />
-                <span className="text-[#84CC16]">Impact</span>
+                {t('heroTitle3')} <br />
+                <span className="text-[#84CC16]">{t('heroTitle4')}</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -105,8 +107,7 @@ const Home = () => {
                 transition={{ delay: 0.1 }}
                 className="text-xl md:text-2xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed mb-14 max-w-xl"
               >
-                BanavatNest transforms curiosity into practical, scalable, and
-                impactful solutions through systematic investigation.
+                {t('heroDesc')}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -118,14 +119,14 @@ const Home = () => {
                   href="/what-we-do/focus"
                   className="bg-[#5D3A1A] text-white px-10 py-5 rounded-full font-black text-lg hover:bg-[#4B2C13] transition-all shadow-xl flex items-center justify-center hover:scale-[1.03] active:scale-95 group"
                 >
-                  What We Do{" "}
+                  {t('ctaWhatWeDo')}{" "}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/bridge/collaboration"
                   className="border-2 border-zinc-900 dark:border-zinc-700 bg-transparent text-zinc-900 dark:text-zinc-100 px-10 py-5 rounded-full font-black text-lg hover:bg-zinc-900 dark:hover:bg-zinc-700 hover:text-white transition-all flex items-center justify-center hover:scale-[1.03] active:scale-95"
                 >
-                  Our Bridge
+                  {t('ctaBridge')}
                 </Link>
               </motion.div>
             </div>

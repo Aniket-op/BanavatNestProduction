@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   // Netlify's CDN handles image optimization; disable Next.js built-in
@@ -10,27 +13,27 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/about',
-        destination: '/about/name',
+        source: '/:locale/about',
+        destination: '/:locale/about/name',
         permanent: true,
       },
       {
-        source: '/services',
-        destination: '/what-we-do/focus',
+        source: '/:locale/services',
+        destination: '/:locale/what-we-do/focus',
         permanent: true,
       },
       {
-        source: '/what-we-do',
-        destination: '/what-we-do/focus',
+        source: '/:locale/what-we-do',
+        destination: '/:locale/what-we-do/focus',
         permanent: true,
       },
       {
-        source: '/bridge',
-        destination: '/bridge/collaboration',
+        source: '/:locale/bridge',
+        destination: '/:locale/bridge/collaboration',
         permanent: true,
       },
     ];
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
