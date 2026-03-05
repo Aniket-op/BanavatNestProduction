@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Microscope, Code2, Users2, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import ImageCarousel from '@/components/ImageCarousel';
 import PageWrapper from '@/components/PageWrapper';
 
@@ -14,45 +15,6 @@ interface FocusAreaItem {
     border: string;
     images: string[];
 }
-
-const FOCUS_AREAS: FocusAreaItem[] = [
-    {
-        title: 'Research & Development',
-        desc: 'Systematic investigation and analytical modeling to solve real-world problems with scalable solutions.',
-        icon: <Microscope className="w-6 h-6" />,
-        color: 'bg-blue-500',
-        accent: 'text-blue-500',
-        border: 'hover:border-blue-500/50',
-        images: ['/images/homepage/Ai.jpg']
-    },
-    {
-        title: 'Product Prototyping',
-        desc: 'Integrating design and engineering to translate ideas into functional, industrial-grade prototypes.',
-        icon: <Code2 className="w-6 h-6" />,
-        color: 'bg-[#84CC16]',
-        accent: 'text-[#84CC16]',
-        border: 'hover:border-[#84CC16]/50',
-        images: ['/images/homepage/agriculture.jpg']
-    },
-    {
-        title: 'Academia Collaboration',
-        desc: 'Enabling student-driven projects and faculty-led innovation through active industry partnering.',
-        icon: <Users2 className="w-6 h-6" />,
-        color: 'bg-purple-500',
-        accent: 'text-purple-500',
-        border: 'hover:border-purple-500/50',
-        images: ['/images/homepage/cyberSecure.jpg']
-    },
-    {
-        title: 'Tech Transfer',
-        desc: 'Transforming research into deployable technologies through IP development and commercialization.',
-        icon: <Zap className="w-6 h-6" />,
-        color: 'bg-amber-500',
-        accent: 'text-amber-500',
-        border: 'hover:border-amber-500/50',
-        images: ['/images/homepage/smart.jpg']
-    }
-];
 
 interface FocusAreaCardProps {
     area: FocusAreaItem;
@@ -114,6 +76,47 @@ const FocusAreaCard: React.FC<FocusAreaCardProps> = ({ area, index }) => {
 };
 
 export default function FocusAreasPage() {
+    const t = useTranslations('focusAreas');
+
+    const FOCUS_AREAS: FocusAreaItem[] = [
+        {
+            title: t('rdTitle'),
+            desc: t('rdDesc'),
+            icon: <Microscope className="w-6 h-6" />,
+            color: 'bg-blue-500',
+            accent: 'text-blue-500',
+            border: 'hover:border-blue-500/50',
+            images: ['/images/homepage/Ai.jpg']
+        },
+        {
+            title: t('protoTitle'),
+            desc: t('protoDesc'),
+            icon: <Code2 className="w-6 h-6" />,
+            color: 'bg-[#84CC16]',
+            accent: 'text-[#84CC16]',
+            border: 'hover:border-[#84CC16]/50',
+            images: ['/images/homepage/agriculture.jpg']
+        },
+        {
+            title: t('acadTitle'),
+            desc: t('acadDesc'),
+            icon: <Users2 className="w-6 h-6" />,
+            color: 'bg-purple-500',
+            accent: 'text-purple-500',
+            border: 'hover:border-purple-500/50',
+            images: ['/images/homepage/cyberSecure.jpg']
+        },
+        {
+            title: t('techTitle'),
+            desc: t('techDesc'),
+            icon: <Zap className="w-6 h-6" />,
+            color: 'bg-amber-500',
+            accent: 'text-amber-500',
+            border: 'hover:border-amber-500/50',
+            images: ['/images/homepage/smart.jpg']
+        }
+    ];
+
     return (
         <PageWrapper>
             <section className="relative bg-zinc-50 dark:bg-[#09090b] py-24 lg:py-32 overflow-hidden transition-colors duration-500">
@@ -130,10 +133,10 @@ export default function FocusAreasPage() {
                     {/* Header */}
                     <div className="text-left mb-16">
                         <h1 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 mb-6 tracking-tight">
-                            Our Focus  <span className="text-[#84CC16]">Areas</span>
+                            {t('title')}  <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                         </h1>
                         <p className="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl">
-                            Bridging the gap between theoretical research and practical application.</p>
+                            {t('subtitle')}</p>
                     </div>
 
                     {/* Bento Grid */}

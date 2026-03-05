@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import ImageCarousel from '@/components/ImageCarousel';
 import PageWrapper from '@/components/PageWrapper';
 
@@ -12,21 +13,23 @@ const images = [
 ];
 
 export default function PhilosophyPage() {
+    const t = useTranslations('aboutPhilosophy');
+
     const banavatValues = [
-        { letter: 'B', title: 'Building with Purpose', desc: 'Focusing on purposeful creation to address meaningful challenges.' },
-        { letter: 'A', title: 'Analytical Thinking', desc: 'Rigorous analysis, critical reasoning, and evidence-based decision-making.' },
-        { letter: 'N', title: 'Nurturing Curiosity', desc: 'Encouraging exploration, questioning, and continuous learning.' },
-        { letter: 'A', title: 'Adaptability', desc: 'Staying flexible and responsive to new ideas and emerging technologies.' },
-        { letter: 'V', title: 'Validation', desc: 'Refining ideas through systematic experimentation and iterative improvement.' },
-        { letter: 'A', title: 'Accountability', desc: 'Integrity, responsibility, and ethical conduct are central.' },
-        { letter: 'T', title: 'Translation', desc: 'Translating research outcomes into practical, scalable solutions.' },
+        { letter: 'B', title: t('b_title'), desc: t('b_desc') },
+        { letter: 'A', title: t('a1_title'), desc: t('a1_desc') },
+        { letter: 'N', title: t('n1_title'), desc: t('n1_desc') },
+        { letter: 'A', title: t('a2_title'), desc: t('a2_desc') },
+        { letter: 'V', title: t('v_title'), desc: t('v_desc') },
+        { letter: 'A', title: t('a3_title'), desc: t('a3_desc') },
+        { letter: 'T', title: t('t_title'), desc: t('t_desc') },
     ];
 
     const nestValues = [
-        { letter: 'N', title: 'Nurturing Ideas', desc: 'Supportive environment where ideas are encouraged and allowed to mature.' },
-        { letter: 'E', title: 'Experimentation', desc: 'Learning through experimentation and evidence-based validation.' },
-        { letter: 'S', title: 'Supportive Innovation', desc: 'Fostering collaboration across disciplines for shared problem-solving.' },
-        { letter: 'T', title: 'Together', desc: 'Working together to deliver meaningful and lasting impact.' },
+        { letter: 'N', title: t('nest_n_title'), desc: t('nest_n_desc') },
+        { letter: 'E', title: t('nest_e_title'), desc: t('nest_e_desc') },
+        { letter: 'S', title: t('nest_s_title'), desc: t('nest_s_desc') },
+        { letter: 'T', title: t('nest_t_title'), desc: t('nest_t_desc') },
     ];
 
     return (
@@ -36,10 +39,10 @@ export default function PhilosophyPage() {
                 <div className="max-w-7xl mx-auto px-6 mb-20">
                     <div className="max-w-4xl">
                         <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-zinc-100 mb-6 tracking-tight">
-                            Philosophy <span className="text-[#84CC16]">& Values</span>
+                            {t('title')} <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                            A unified philosophy where ideas are built with purpose and nurtured with care.
+                            {t('subtitle')}
                         </p>
                     </div>
                 </div>
@@ -61,7 +64,7 @@ export default function PhilosophyPage() {
                             >
                                 <div className="p-8 border-b border-zinc-200 dark:border-zinc-800">
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-[#84CC16]">
-                                        Our Foundation — BANAVAT
+                                        {t('banavatHeader')}
                                     </h3>
                                 </div>
 
@@ -96,7 +99,7 @@ export default function PhilosophyPage() {
                             >
                                 <div className="p-8 border-b border-zinc-200 dark:border-zinc-800">
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-[#84CC16]">
-                                        Our Ecosystem — NEST
+                                        {t('nestHeader')}
                                     </h3>
                                 </div>
 

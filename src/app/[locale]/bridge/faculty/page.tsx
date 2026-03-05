@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import PageWrapper from '@/components/PageWrapper';
 
 export default function FacultyEngagementPage() {
+    const t = useTranslations('facultyPage');
+
     return (
         <PageWrapper>
             <div className="min-h-screen bg-zinc-50 dark:bg-[#09090b] transition-colors pb-24">
@@ -12,10 +15,10 @@ export default function FacultyEngagementPage() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-3xl text-left">
                             <h1 className="text-6xl md:text-8xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 leading-tight tracking-tighter">
-                                Faculty <span className="text-[#84CC16]">Roles</span>
+                                {t('title')} <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
-                                Central to our ecosystem as domain experts, mentors, and principal investigators.
+                                {t('subtitle')}
                             </p>
                         </div>
                     </div>
@@ -35,13 +38,13 @@ export default function FacultyEngagementPage() {
                             </div>
                             <div className="prose prose-lg dark:prose-invert max-w-none font-medium text-gray-600 dark:text-zinc-300">
                                 <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 leading-tight mb-6">
-                                    Leading interdisciplinary teams and guiding research with impact.
+                                    {t('heading')}
                                 </p>
                                 <p className="mb-6">
-                                    BanavatNest enables faculty engagement through joint research projects, consultancy, sponsored research, and co-development of intellectual property.
+                                    {t('bodyP1')}
                                 </p>
                                 <p>
-                                    Faculty members are encouraged to lead interdisciplinary teams, guide student researchers, and contribute to grant proposals and pilot deployments. This engagement fosters meaningful research impact while strengthening institutional collaboration with industry.
+                                    {t('bodyP2')}
                                 </p>
                             </div>
                         </div>

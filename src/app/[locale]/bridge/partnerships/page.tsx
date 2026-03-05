@@ -2,15 +2,18 @@
 
 import { motion } from 'framer-motion';
 import { Building } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import PageWrapper from '@/components/PageWrapper';
 
 export default function IndustryPartnershipsPage() {
+    const t = useTranslations('industryPartnerships');
+
     const pocSteps = [
-        "Problem definition",
-        "Solution design",
-        "Prototype development",
-        "Validation",
-        "Scalability assessment"
+        t('step1'),
+        t('step2'),
+        t('step3'),
+        t('step4'),
+        t('step5'),
     ];
 
     return (
@@ -20,10 +23,10 @@ export default function IndustryPartnershipsPage() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-3xl text-left">
                             <h1 className="text-5xl md:text-7xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 leading-tight tracking-tighter">
-                                Industry <span className="text-[#84CC16]">Partnerships</span>
+                                {t('title')} <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
-                                Demonstrating technical feasibility and business potential through Proof-of-Concepts (PoCs).
+                                {t('subtitle')}
                             </p>
                         </div>
                     </div>
@@ -38,7 +41,7 @@ export default function IndustryPartnershipsPage() {
                             <div className="w-20 h-20 bg-zinc-100 dark:bg-zinc-800 rounded-3xl flex items-center justify-center mb-8">
                                 <Building className="w-10 h-10 text-[#5D3A1A] dark:text-[#84CC16]" />
                             </div>
-                            <h3 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 mb-6 uppercase tracking-tight">The PoC Framework</h3>
+                            <h3 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 mb-6 uppercase tracking-tight">{t('frameworkTitle')}</h3>
                             <ul className="space-y-4">
                                 {pocSteps.map((step, i) => (
                                     <li key={i} className="flex items-center text-lg font-bold text-gray-600 dark:text-zinc-400">
@@ -51,14 +54,14 @@ export default function IndustryPartnershipsPage() {
 
                         <div className="flex flex-col justify-center">
                             <p className="text-2xl text-zinc-900 dark:text-zinc-100 font-medium leading-relaxed mb-8">
-                                Collaborating to develop solutions that demonstrate real-world impact.
+                                {t('heading')}
                             </p>
                             <div className="prose prose-lg dark:prose-invert text-gray-500 dark:text-zinc-400">
                                 <p>
-                                    Industry partners benefit from rapid prototyping, academic validation, and access to skilled talent, while academic participants gain exposure to real-world constraints and deployment challenges.
+                                    {t('bodyP1')}
                                 </p>
                                 <p className="text-[#84CC16] font-bold">
-                                    Successful PoCs can progress toward technology transfer, startup incubation, or long-term industry adoption.
+                                    {t('successNote')}
                                 </p>
                             </div>
                         </div>

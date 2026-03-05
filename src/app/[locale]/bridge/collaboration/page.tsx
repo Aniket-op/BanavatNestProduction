@@ -2,14 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { Link as LinkIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import PageWrapper from '@/components/PageWrapper';
 
 export default function CollaborationPage() {
+    const t = useTranslations('collaboration');
+
     const listItems = [
-        "Problem-driven approach: Industry challenges mapped to academic research.",
-        "Joint Supervision: Collaboration enabled through faculty and industry mentoring.",
-        "Milestone-based execution: Ensuring alignment with goals and timelines.",
-        "Flexibility: Adapting to different Technology Readiness Levels (TRLs)."
+        t('item1'),
+        t('item2'),
+        t('item3'),
+        t('item4'),
     ];
 
     return (
@@ -19,10 +22,10 @@ export default function CollaborationPage() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-3xl text-left">
                             <h1 className="text-6xl md:text-8xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 leading-tight tracking-tighter">
-                                Collaboration <span className="text-[#84CC16]">Model</span>
+                                {t('title')} <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                             </h1>
                             <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
-                                Connecting academic rigor with industrial relevance through a multi-layer engagement framework.
+                                {t('subtitle')}
                             </p>
                         </div>
                     </div>
@@ -38,7 +41,7 @@ export default function CollaborationPage() {
                             <div className="absolute top-8 right-8 text-zinc-900 opacity-5">
                                 <LinkIcon size={120} />
                             </div>
-                            <h2 className="text-3xl font-black text-[#5D3A1A] mb-8 uppercase">The Framework</h2>
+                            <h2 className="text-3xl font-black text-[#5D3A1A] mb-8 uppercase">{t('frameworkTitle')}</h2>
                             <div className="space-y-4">
                                 {listItems.map((item, i) => (
                                     <div key={i} className="flex items-start space-x-3 bg-white/20 p-4 rounded-xl border border-white/30 backdrop-blur-sm">
@@ -51,10 +54,10 @@ export default function CollaborationPage() {
 
                         <div className="prose dark:prose-invert text-lg text-gray-600 dark:text-zinc-400 font-medium">
                             <p className="mb-6">
-                                Our collaboration model is built on a multi-layer engagement framework that connects students, faculty, and industry partners through well-defined roles and outcomes.
+                                {t('bodyP1')}
                             </p>
                             <p>
-                                We adopt a problem-driven approach where industry partners propose real-world challenges, which are then mapped to academic research problems and student projects. Collaboration is enabled through joint supervision, milestone-based project execution, and continuous technical mentoring.
+                                {t('bodyP2')}
                             </p>
                         </div>
                     </div>

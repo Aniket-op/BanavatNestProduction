@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { BrainCircuit, GlobeLock, Cpu, Tractor } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import ImageCarousel from '@/components/ImageCarousel';
 import PageWrapper from '@/components/PageWrapper';
 
@@ -14,45 +15,6 @@ interface DomainItem {
     border: string;
     images: string[];
 }
-
-const domains: DomainItem[] = [
-    {
-        title: 'AI, ML & Data Science',
-        desc: 'Intelligent algorithms for prediction and optimization across engineering and health sectors.',
-        icon: <BrainCircuit className="w-6 h-6" />,
-        color: 'bg-[#84CC16]',
-        accent: 'text-[#84CC16]',
-        border: 'hover:border-[#84CC16]/50',
-        images: ['/images/homepage/Ai.jpg']
-    },
-    {
-        title: 'Cybersecurity & IoT',
-        desc: 'Secure and decentralized systems for connected environments. Addressing network security and privacy.',
-        icon: <GlobeLock className="w-6 h-6" />,
-        color: 'bg-green-500',
-        accent: 'text-green-500',
-        border: 'hover:border-green-500/50',
-        images: ['/images/homepage/cyberSecure.jpg']
-    },
-    {
-        title: 'Smart Systems & Health',
-        desc: 'Integrating sensing and automation for resource-efficient technologies and improved quality of life.',
-        icon: <Cpu className="w-6 h-6" />,
-        color: 'bg-teal-500',
-        accent: 'text-teal-500',
-        border: 'hover:border-teal-500/50',
-        images: ['/images/homepage/smart.jpg']
-    },
-    {
-        title: 'Precision Agriculture',
-        desc: 'Advanced data analytics and IoT monitoring to enhance farming productivity and sustainability.',
-        icon: <Tractor className="w-6 h-6" />,
-        color: 'bg-lime-500',
-        accent: 'text-lime-500',
-        border: 'hover:border-lime-500/50',
-        images: ['/images/homepage/agriculture.jpg']
-    }
-];
 
 interface DomainCardProps {
     domain: DomainItem;
@@ -114,6 +76,47 @@ const DomainCard: React.FC<DomainCardProps> = ({ domain, index }) => {
 };
 
 export default function DomainsPage() {
+    const t = useTranslations('researchDomains');
+
+    const domains: DomainItem[] = [
+        {
+            title: t('aiTitle'),
+            desc: t('aiDesc'),
+            icon: <BrainCircuit className="w-6 h-6" />,
+            color: 'bg-[#84CC16]',
+            accent: 'text-[#84CC16]',
+            border: 'hover:border-[#84CC16]/50',
+            images: ['/images/homepage/Ai.jpg']
+        },
+        {
+            title: t('cyberTitle'),
+            desc: t('cyberDesc'),
+            icon: <GlobeLock className="w-6 h-6" />,
+            color: 'bg-green-500',
+            accent: 'text-green-500',
+            border: 'hover:border-green-500/50',
+            images: ['/images/homepage/cyberSecure.jpg']
+        },
+        {
+            title: t('smartTitle'),
+            desc: t('smartDesc'),
+            icon: <Cpu className="w-6 h-6" />,
+            color: 'bg-teal-500',
+            accent: 'text-teal-500',
+            border: 'hover:border-teal-500/50',
+            images: ['/images/homepage/smart.jpg']
+        },
+        {
+            title: t('agriTitle'),
+            desc: t('agriDesc'),
+            icon: <Tractor className="w-6 h-6" />,
+            color: 'bg-lime-500',
+            accent: 'text-lime-500',
+            border: 'hover:border-lime-500/50',
+            images: ['/images/homepage/agriculture.jpg']
+        }
+    ];
+
     return (
         <PageWrapper>
             <section className="relative bg-white dark:bg-[#09090b] py-24 lg:py-32 overflow-hidden transition-colors duration-500">
@@ -130,10 +133,10 @@ export default function DomainsPage() {
                     {/* Header */}
                     <div className="text-left mb-16">
                         <h1 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 mb-6 tracking-tight">
-                            Our <span className="text-[#84CC16]">Domains</span>
+                            {t('title')} <span className="text-[#84CC16]">{t('titleHighlight')}</span>
                         </h1>
                         <p className="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-2xl">
-                            Diverse expertise driving technological advancement across impactful industries.
+                            {t('subtitle')}
                         </p>
                     </div>
 
