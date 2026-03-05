@@ -53,6 +53,10 @@ const Home = () => {
       title: t('updateTitle'),
       route: "/",
     },
+    {
+      title: t('updateTitle2'),
+      route: "/",
+    },
   ];
 
   return (
